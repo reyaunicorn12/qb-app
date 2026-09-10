@@ -340,8 +340,8 @@ app.post('/api/import', (req, res) => {
   res.json({ success: true, added: addedCount, total: questions.length });
 });
 
-// Fallback to index.html for SPA routing
-app.get('*', (req, res) => {
+// Fallback to index.html for SPA routing while ignoring API endpoints
+app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
