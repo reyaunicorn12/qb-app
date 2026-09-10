@@ -879,6 +879,17 @@ body.theme-night .reading-box {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.timer-toggle-btn {
+  min-width: 82px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.timer-toggle-btn.active {
+  background: linear-gradient(135deg, #10b981, #14b8a6);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.28);
+}
+
 .tiki-input:focus, .tiki-textarea:focus {
   border-color: #0284c7;
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);

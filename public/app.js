@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     isDead: false,
     buzzTimer: null,
     buzzSecondsLeft: 7.0,
+    timerEnabled: true,
     wpm: 260,
     
     // Solo Scores & Stats
@@ -76,6 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     soloDiffSelect: document.getElementById('soloDiffSelect'),
     wpmSlider: document.getElementById('wpmSlider'),
     wpmValue: document.getElementById('wpmValue'),
+    timerToggleBtn: document.getElementById('timerToggleBtn'),
+    timerToggleLabel: document.getElementById('timerToggleLabel'),
     nextQuestionBtn: document.getElementById('nextQuestionBtn'),
     pauseResumeBtn: document.getElementById('pauseResumeBtn'),
     pauseResumeIcon: document.getElementById('pauseResumeIcon'),
@@ -369,6 +372,44 @@ document.addEventListener('DOMContentLoaded', () => {
     els.questionStream.innerHTML = html || '<em>Reading started...</em>';
   }
 
+  function updateTimerToggleUi() {
+    const label = state.timerEnabled ? 'On' : 'Off';
+    els.timerToggleLabel.textContent = label;
+    els.timerToggleBtn.setAttribute('aria-pressed', String(state.timerEnabled));
+    els.timerToggleBtn.classList.toggle('active', state.timerEnabled);
+    els.timerToggleBtn.title = state.timerEnabled ? 'Turn timer off' : 'Turn timer on';
+  }
+
+  function startBuzzCountdown(durationSeconds, onTimeout) {
+    if (!state.timerEnabled) {
+      clearInterval(state.buzzTimer);
+      els.buzzTimerContainer.classList.add('hidden');
+      return;
+    }
+
+    state.buzzSecondsLeft = durationSeconds;
+    els.timerSeconds.textContent = `${state.buzzSecondsLeft.toFixed(1)}s`;
+    els.timerProgress.style.width = '100%';
+    els.buzzTimerContainer.classList.remove('hidden');
+
+    clearInterval(state.buzzTimer);
+    const tickMs = 100;
+    state.buzzTimer = setInterval(() => {
+      state.buzzSecondsLeft -= (tickMs / 1000);
+      if (state.buzzSecondsLeft <= 0) {
+        clearInterval(state.buzzTimer);
+        state.buzzSecondsLeft = 0;
+        els.timerSeconds.textContent = '0.0s';
+        els.timerProgress.style.width = '0%';
+        onTimeout();
+      } else {
+        els.timerSeconds.textContent = `${state.buzzSecondsLeft.toFixed(1)}s`;
+        const pct = (state.buzzSecondsLeft / durationSeconds) * 100;
+        els.timerProgress.style.width = `${pct}%`;
+      }
+    }, tickMs);
+  }
+
   function triggerSoloBuzz() {
     if (!state.currentTossup || state.isBuzzed) return;
 
@@ -383,31 +424,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Disable buzz button & show answer input
     els.soloBuzzBtn.disabled = true;
     els.answerForm.classList.remove('hidden');
-    els.buzzTimerContainer.classList.remove('hidden');
     els.answerInput.value = '';
     els.answerInput.focus();
 
-    // Start 7s countdown
-    state.buzzSecondsLeft = 7.0;
-    els.timerSeconds.textContent = '7.0s';
-    els.timerProgress.style.width = '100%';
+    if (!state.timerEnabled) {
+      els.buzzTimerContainer.classList.add('hidden');
+      return;
+    }
 
-    clearInterval(state.buzzTimer);
-    const tickMs = 100;
-    state.buzzTimer = setInterval(() => {
-      state.buzzSecondsLeft -= (tickMs / 1000);
-      if (state.buzzSecondsLeft <= 0) {
-        clearInterval(state.buzzTimer);
-        state.buzzSecondsLeft = 0;
-        els.timerSeconds.textContent = '0.0s';
-        els.timerProgress.style.width = '0%';
-        handleSoloTimeOut();
-      } else {
-        els.timerSeconds.textContent = `${state.buzzSecondsLeft.toFixed(1)}s`;
-        const pct = (state.buzzSecondsLeft / 7.0) * 100;
-        els.timerProgress.style.width = `${pct}%`;
-      }
-    }, tickMs);
+    startBuzzCountdown(7.0, handleSoloTimeOut);
   }
 
   async function handleSoloAnswerSubmit(userAns) {
@@ -435,22 +460,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (check.prompt) {
         // Prompt situation - give player another chance
         els.answerForm.classList.remove('hidden');
-        els.buzzTimerContainer.classList.remove('hidden');
         els.promptNotice.textContent = check.message || 'Prompt: Please be more specific!';
         els.promptNotice.classList.remove('hidden');
         els.answerInput.focus();
-        // Reset timer to 4s for prompt
-        state.buzzSecondsLeft = 4.0;
-        state.buzzTimer = setInterval(() => {
-          state.buzzSecondsLeft -= 0.1;
-          if (state.buzzSecondsLeft <= 0) {
-            clearInterval(state.buzzTimer);
-            handleSoloAnswerSubmit('__PROMPT_TIMEOUT__');
-          } else {
-            els.timerSeconds.textContent = `${state.buzzSecondsLeft.toFixed(1)}s`;
-            els.timerProgress.style.width = `${(state.buzzSecondsLeft / 4.0) * 100}%`;
-          }
-        }, 100);
+
+        if (state.timerEnabled) {
+          startBuzzCountdown(4.0, () => handleSoloAnswerSubmit('__PROMPT_TIMEOUT__'));
+        } else {
+          els.buzzTimerContainer.classList.add('hidden');
+        }
         return;
       }
 
@@ -1061,6 +1079,19 @@ document.addEventListener('DOMContentLoaded', () => {
     els.wpmSlider.addEventListener('input', (e) => {
       state.wpm = parseInt(e.target.value, 10);
       els.wpmValue.textContent = state.wpm;
+    });
+
+    els.timerToggleBtn.addEventListener('click', () => {
+      state.timerEnabled = !state.timerEnabled;
+      updateTimerToggleUi();
+      clearInterval(state.buzzTimer);
+
+      if (!state.timerEnabled) {
+        els.buzzTimerContainer.classList.add('hidden');
+        showToast('⏱️ Timer Off');
+      } else {
+        showToast('⏱️ Timer On');
+      }
     });
 
     els.nextQuestionBtn.addEventListener('click', startSoloQuestion);

@@ -58,6 +58,12 @@ async function runTests() {
   }
 
   try {
+    console.log('0. Checking app UI exposes a timer toggle...');
+    const home = await request('/');
+    assert.strictEqual(home.status, 200);
+    assert.ok(typeof home.body === 'string' && /id="timerToggleBtn"|Time:\s*(On|Off)|Timer\s*:\s*(On|Off)/i.test(home.body), 'Timer toggle UI is missing');
+    console.log('   ✅ App UI includes a timer toggle control.');
+
     console.log(`\n1. Testing /api/info on custom port ${TEST_PORT}...`);
     const info = await request('/api/info');
     assert.strictEqual(info.status, 200);
