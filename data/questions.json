@@ -1,0 +1,498 @@
+[
+  {
+    "id": "tossup-1",
+    "category": "Science",
+    "subcategory": "Biology",
+    "difficulty": "Regular",
+    "question": "These organelles possess their own 70S ribosomes and circular DNA, supporting Lynn Margulis's endosymbiotic theory. (*) Inner folding of their membrane creates cristae which surround a central fluid matrix. Cytochrome c is released from these organelles during apoptosis, and their inner membrane contains complexes I through IV of the electron transport chain. For 10 points, name these cellular powerhouses that produce ATP through cellular respiration.",
+    "answer": "Mitochondria",
+    "accept": ["mitochondrion", "mitochondria", "chondriosome"],
+    "promptOn": ["organelle"],
+    "explanation": "Mitochondria are double-membrane-bound organelles found in most eukaryotic organisms, responsible for generating most of the cell's supply of ATP.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer the following about cellular biology in marine organisms:",
+      "parts": [
+        {
+          "prompt": "These photosynthetic organelles evolved from cyanobacterial endosymbiosis and are found in phytoplankton and marine algae.",
+          "answer": "Chloroplasts",
+          "accept": ["chloroplast", "plastid"]
+        },
+        {
+          "prompt": "Dinoflagellates create glowing blue waves in bioluminescent bays using this enzyme, which oxidizes luciferin.",
+          "answer": "Luciferase",
+          "accept": ["luciferase"]
+        },
+        {
+          "prompt": "Marine fish balance water and salt concentration across membranes through this passive movement of water molecules.",
+          "answer": "Osmosis",
+          "accept": ["osmoregulation", "osmotic pressure"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-2",
+    "category": "Literature",
+    "subcategory": "American Literature",
+    "difficulty": "Regular",
+    "question": "In this novel, the protagonist dreams of hunting lions on African beaches as an old man. Manolin is forbidden by his parents from fishing with the main character after 84 days without a catch. (*) The protagonist hooks a giant 18-foot marlin in the Gulf Stream near Havana, only to have it devoured by sharks on the return voyage. For 10 points, name this novella featuring the fisherman Santiago, written by Ernest Hemingway.",
+    "answer": "The Old Man and the Sea",
+    "accept": ["Old Man and the Sea", "The Old Man and the Sea by Ernest Hemingway"],
+    "promptOn": ["Santiago"],
+    "explanation": "The Old Man and the Sea won the Pulitzer Prize for Fiction in 1953 and contributed to Hemingway receiving the Nobel Prize in Literature in 1954.",
+    "bonus": {
+      "leadIn": "For 10 points each, identify these other maritime literary classics:",
+      "parts": [
+        {
+          "prompt": "This Herman Melville epic opens with the famous line 'Call me Ishmael' and chronicles Captain Ahab's quest for a white whale.",
+          "answer": "Moby-Dick",
+          "accept": ["Moby Dick", "The Whale"]
+        },
+        {
+          "prompt": "In this Coleridge poem, a mariner shoots an albatross and laments 'Water, water, everywhere, / Nor any drop to drink.'",
+          "answer": "The Rime of the Ancient Mariner",
+          "accept": ["Rime of the Ancient Mariner"]
+        },
+        {
+          "prompt": "Captain Nemo commands the submarine Nautilus in this Jules Verne science-fiction classic.",
+          "answer": "Twenty Thousand Leagues Under the Sea",
+          "accept": ["20,000 Leagues Under the Sea", "Vingt mille lieues sous les mers"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-3",
+    "category": "History",
+    "subcategory": "World History",
+    "difficulty": "Championship",
+    "question": "This monarch created the Grand Embassy to tour Western Europe incognito under the alias Peter Mikhailov. (*) After capturing Azov and winning the decisive Battle of Poltava against Sweden's Charles XII in the Great Northern War, this ruler founded a new seaport capital on the Baltic Sea, nicknamed a 'window on Europe'. For 10 points, name this 6-foot-8 tsar who modernized and westernized Russia.",
+    "answer": "Peter the Great",
+    "accept": ["Peter I", "Peter Alexeyevich", "Pyotr Alexeyevich", "Peter I of Russia", "Peter the Great of Russia"],
+    "promptOn": ["Peter"],
+    "explanation": "Peter the Great ruled the Tsardom of Russia and later the Russian Empire from 1682 until his death in 1725, founding Saint Petersburg in 1703.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer the following about Russian imperial history:",
+      "parts": [
+        {
+          "prompt": "This German-born empress overthrew her husband Peter III and expanded Russian territory down to the Black Sea and Crimea.",
+          "answer": "Catherine the Great",
+          "accept": ["Catherine II", "Yekaterina Velikaya", "Catherine II of Russia"]
+        },
+        {
+          "prompt": "Peter the Great established this new maritime capital on the Baltic delta of the Neva River.",
+          "answer": "Saint Petersburg",
+          "accept": ["St. Petersburg", "Petrograd", "Leningrad", "Sankt-Peterburg"]
+        },
+        {
+          "prompt": "Peter imposed a famous tax on this facial feature to encourage European grooming standards among Russian boyars.",
+          "answer": "Beards",
+          "accept": ["beard tax", "beards", "facial hair"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-4",
+    "category": "Fine Arts",
+    "subcategory": "Visual Art",
+    "difficulty": "Regular",
+    "question": "This print is the first in the series 'Thirty-Six Views of Mount Fuji' and utilizes imported Prussian blue pigment. (*) Boats known as oshiokuri-bune battle towering crests of foam while the snow-capped volcanic peak of Mount Fuji sits quietly in the background. For 10 points, name this iconic Japanese ukiyo-e woodblock print by Hokusai.",
+    "answer": "The Great Wave off Kanagawa",
+    "accept": ["The Great Wave", "Great Wave off Kanagawa", "Under the Wave off Kanagawa", "Kanagawa-oki Nami Ura"],
+    "promptOn": ["Thirty-Six Views of Mount Fuji", "Hokusai"],
+    "explanation": "Hokusai's 'The Great Wave off Kanagawa' was published in 1831 during the Edo period and is one of the most recognized works of Japanese art in the world.",
+    "bonus": {
+      "leadIn": "For 10 points each, identify these other celebrated marine or coastal artworks:",
+      "parts": [
+        {
+          "prompt": "This French Romantic painter captured maritime disaster and human desperation on a makeshift raft in 'The Raft of the Medusa'.",
+          "answer": "Théodore Géricault",
+          "accept": ["Gericault", "Theodore Gericault", "Jean-Louis André Théodore Géricault"]
+        },
+        {
+          "prompt": "This English master of atmospheric light and color painted 'The Fighting Temeraire' being tugged to her last berth.",
+          "answer": "J. M. W. Turner",
+          "accept": ["Turner", "William Turner", "Joseph Mallord William Turner"]
+        },
+        {
+          "prompt": "Claude Monet's painting titled 'Impression, [this time of day]' depicting the port of Le Havre gave Impressionism its name.",
+          "answer": "Sunrise",
+          "accept": ["Impression, Sunrise", "Impression, soleil levant"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-5",
+    "category": "Geography",
+    "subcategory": "Physical Geography",
+    "difficulty": "Novice",
+    "question": "This body of water is home to Challenger Deep, the deepest surveyed point on Earth located within the Mariana Trench. (*) Ringed by a horseshoe-shaped belt of volcanoes and seismic activity known as the Ring of Fire, this ocean contains island chains such as Polynesia, Micronesia, and Hawaii. For 10 points, identify this largest and deepest ocean on Earth.",
+    "answer": "Pacific Ocean",
+    "accept": ["Pacific", "the Pacific"],
+    "promptOn": [],
+    "explanation": "The Pacific Ocean covers more than 60 million square miles, comprising more than 30% of the Earth's total surface area.",
+    "bonus": {
+      "leadIn": "For 10 points each, identify these notable coastal and oceanic geographical landmarks:",
+      "parts": [
+        {
+          "prompt": "Located off the coast of Queensland, Australia, this is the world's largest coral reef ecosystem.",
+          "answer": "Great Barrier Reef",
+          "accept": ["The Great Barrier Reef"]
+        },
+        {
+          "prompt": "This warm and swift Atlantic ocean current originates in the Gulf of Mexico and warms Western Europe.",
+          "answer": "Gulf Stream",
+          "accept": ["The Gulf Stream"]
+        },
+        {
+          "prompt": "This circular ocean current system, formed by global wind patterns and Coriolis forces, concentrates marine debris into garbage patches.",
+          "answer": "Ocean Gyre",
+          "accept": ["gyre", "oceanic gyre", "gyres"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-6",
+    "category": "Mythology",
+    "subcategory": "Greco-Roman",
+    "difficulty": "Novice",
+    "question": "This deity used his golden chariot to ride across the waves with hippocampi, and fathered the winged horse Pegasus with Medusa. (*) This brother of Hades and Zeus lost the patronage of Athens to Athena after striking the Acropolis with his three-pronged trident to create a spring of saltwater. For 10 points, name this Greek god of the seas, horses, and earthquakes, whose Roman counterpart is Neptune.",
+    "answer": "Poseidon",
+    "accept": ["Neptune", "Poseidon"],
+    "promptOn": ["Earth-shaker"],
+    "explanation": "Poseidon was one of the Twelve Olympians in ancient Greek religion and myth, presiding over the sea, storms, earthquakes and horses.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer questions about sea deities and monsters from world folklore:",
+      "parts": [
+        {
+          "prompt": "In Norse mythology, this sea giant's wife Rán captures drowned sailors with a giant net.",
+          "answer": "Aegir",
+          "accept": ["Ægir", "Egir"]
+        },
+        {
+          "prompt": "In the Odyssey, Odysseus must navigate between the six-headed monster Scylla and this whirlpool monster.",
+          "answer": "Charybdis",
+          "accept": ["Kharybdis"]
+        },
+        {
+          "prompt": "In Polynesian and Maori mythology, this demigod fished up the North Island of New Zealand using a magic fishhook.",
+          "answer": "Māui",
+          "accept": ["Maui", "Tikitiki"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-7",
+    "category": "Science",
+    "subcategory": "Physics & Chemistry",
+    "difficulty": "Regular",
+    "question": "This quantity's value for water is unusually high at approximately 4.184 joules per gram-degree Celsius, allowing coastal regions to maintain moderate climates. (*) Calculated as heat capacity divided by mass, this quantity is denoted 'c' in the formula Q equals m times c times delta T. For 10 points, identify this thermodynamic property defined as the amount of heat energy required to raise the temperature of one unit of mass of a substance by one degree.",
+    "answer": "Specific Heat Capacity",
+    "accept": ["Specific Heat", "Specific Heat Capacity", "heat capacity", "c", "specific thermal capacity"],
+    "promptOn": ["thermal capacity"],
+    "explanation": "Water's high specific heat capacity acts as a global thermal buffer, moderating oceanic and coastal weather worldwide.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer these questions about thermodynamic phase changes:",
+      "parts": [
+        {
+          "prompt": "The heat required to convert a solid into a liquid at its melting point is called the latent heat of [this].",
+          "answer": "Fusion",
+          "accept": ["latent heat of fusion", "melting"]
+        },
+        {
+          "prompt": "This phase transition occurs when a substance transitions directly from a solid to a gas without entering a liquid state.",
+          "answer": "Sublimation",
+          "accept": ["sublimation", "sublimating"]
+        },
+        {
+          "prompt": "At this specific temperature and pressure on a phase diagram, all three states of matter (solid, liquid, and gas) coexist in equilibrium.",
+          "answer": "Triple point",
+          "accept": ["triple point"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-8",
+    "category": "Beach & Ocean Lore",
+    "subcategory": "Maritime & Tropical",
+    "difficulty": "Regular",
+    "question": "This sport's early Hawaiian origins were recorded by Captain Cook's crew observing he'e nalu on koa wood boards. (*) Duke Kahanamoku helped popularize it worldwide, and famous global locations for this sport include Banzai Pipeline, Jeffreys Bay, and Teahupo'o. For 10 points, name this aquatic board sport where riders catch breaking ocean waves.",
+    "answer": "Surfing",
+    "accept": ["surf", "surfboarding", "he'e nalu", "heʻe nalu"],
+    "promptOn": ["board sport", "riding waves"],
+    "explanation": "Surfing was an integral part of ancient Polynesian culture, elevated into high art and royalty tradition in Hawaii before spreading globally in the 20th century.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer the following about beach geography and tropical ecology:",
+      "parts": [
+        {
+          "prompt": "These unique tropical coastal trees possess tangled stilt roots that thrive in brackish saltwater and protect coastlines from erosion.",
+          "answer": "Mangroves",
+          "accept": ["mangrove", "mangrove forest", "Rhizophora"]
+        },
+        {
+          "prompt": "This ring-shaped coral reef island encloses a central lagoon.",
+          "answer": "Atoll",
+          "accept": ["atoll", "coral atoll"]
+        },
+        {
+          "prompt": "Pink sand beaches like those in Bermuda get their characteristic color from the crushed reddish shells of these microscopic protozoa.",
+          "answer": "Foraminifera",
+          "accept": ["forams", "foraminiferans", "Homotrema rubrum"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-9",
+    "category": "Literature",
+    "subcategory": "British Literature",
+    "difficulty": "Regular",
+    "question": "In this play, Ariel sings 'Full fathom five thy father lies; / Of his bones are coral made' to the prince Ferdinand. (*) Caliban conspires with the drunken jester Trinculo and butler Stephano to murder his master on an enchanted remote island. For 10 points, name this romance play by William Shakespeare that begins with a shipwreck conjured by the sorcerer Prospero.",
+    "answer": "The Tempest",
+    "accept": ["The Tempest by William Shakespeare"],
+    "promptOn": ["Prospero"],
+    "explanation": "The Tempest is believed to be the last play William Shakespeare wrote alone (c. 1610-1611), set on a magical island in the Mediterranean.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer questions about Shakespearean characters and works:",
+      "parts": [
+        {
+          "prompt": "This daughter of Prospero falls in love with Ferdinand and exclaims 'O brave new world, that has such people in't!'",
+          "answer": "Miranda",
+          "accept": ["Miranda"]
+        },
+        {
+          "prompt": "This spirit of the air serves Prospero in exchange for the promise of freedom.",
+          "answer": "Ariel",
+          "accept": ["Ariel"]
+        },
+        {
+          "prompt": "This venomous witch was the mother of Caliban who originally ruled the island before dying.",
+          "answer": "Sycorax",
+          "accept": ["Sycorax"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-10",
+    "category": "History",
+    "subcategory": "US History",
+    "difficulty": "Novice",
+    "question": "During this 1944 amphibious operation codenamed Operation Neptune, General Omar Bradley commanded the First Army landing at Omaha and Utah. (*) Part of Operation Overlord under Supreme Allied Commander Dwight D. Eisenhower, it established an Allied beachhead in Normandy on June 6. For 10 points, give this historic military assault on French beaches during World War II, also called D-Day.",
+    "answer": "D-Day",
+    "accept": ["Normandy landings", "Operation Overlord", "Invasion of Normandy", "Operation Neptune", "June 6 1944 invasion"],
+    "promptOn": ["Overlord", "Neptune"],
+    "explanation": "The Normandy landings were the largest amphibious invasion in history, involving over 156,000 Allied troops landing across five beach sectors.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer the following about the Normandy invasion beaches:",
+      "parts": [
+        {
+          "prompt": "This bloodiest beach sector saw American forces face heavy fortifications and steep cliffs before breaking through.",
+          "answer": "Omaha Beach",
+          "accept": ["Omaha"]
+        },
+        {
+          "prompt": "Canadian forces landed at this beach code-named after a Roman goddess, between Gold and Sword beaches.",
+          "answer": "Juno Beach",
+          "accept": ["Juno"]
+        },
+        {
+          "prompt": "Artificial portable harbors called [these] harbor units were towed across the English Channel to supply Allied troops.",
+          "answer": "Mulberry Harbours",
+          "accept": ["Mulberry", "Mulberry harbours", "Mulberry harbors"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-11",
+    "category": "Fine Arts",
+    "subcategory": "Music",
+    "difficulty": "Regular",
+    "question": "The second movement of this orchestral work depicts 'Play of the Waves', while its third movement is titled 'Dialogue of the Wind and the Sea'. (*) Subtitled 'three symphonic sketches', this masterpiece by a French Impressionist composer was inspired by Hokusai's woodblock print. For 10 points, name this oceanic composition written by Claude Debussy.",
+    "answer": "La Mer",
+    "accept": ["The Sea", "La Mer, trois esquisses symphoniques pour orchestre"],
+    "promptOn": ["Debussy"],
+    "explanation": "Claude Debussy completed 'La Mer' in 1905 on the English Channel coast in Eastbourne; it remains one of the pinnacle works of Impressionist music.",
+    "bonus": {
+      "leadIn": "For 10 points each, identify these other sea-inspired musical compositions:",
+      "parts": [
+        {
+          "prompt": "This Russian composer featured a stormy sea voyage and shipwreck in his symphonic suite 'Scheherazade'.",
+          "answer": "Nikolai Rimsky-Korsakov",
+          "accept": ["Rimsky-Korsakov", "Rimsky Korsakov"]
+        },
+        {
+          "prompt": "This English composer wrote 'A Sea Symphony' based on Walt Whitman's poetry as his first symphony.",
+          "answer": "Ralph Vaughan Williams",
+          "accept": ["Vaughan Williams"]
+        },
+        {
+          "prompt": "Felix Mendelssohn was inspired to write 'The Hebrides' overture after visiting this sea cave on the Scottish island of Staffa.",
+          "answer": "Fingal's Cave",
+          "accept": ["Fingal's Cave", "Fingals Cave"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-12",
+    "category": "Science",
+    "subcategory": "Astronomy & Earth Science",
+    "difficulty": "Novice",
+    "question": "These periodic phenomena are caused by differential gravitational attraction across a planet's diameter. (*) When the Sun, Moon, and Earth align in syzygy during full and new moons, the 'spring' variety of these events produces maximum tidal range, while perpendicular alignments produce 'neap' ones. For 10 points, name these rhythmic rises and falls of ocean sea levels primarily driven by the Moon.",
+    "answer": "Tides",
+    "accept": ["ocean tides", "tide", "tidal force", "oceanic tides"],
+    "promptOn": ["gravitational effects"],
+    "explanation": "Ocean tides are the rise and fall of sea levels caused by the combined effects of gravitational forces exerted by the Moon and the Sun, and Earth's rotation.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer these questions about oceanic and atmospheric science:",
+      "parts": [
+        {
+          "prompt": "This Bay in Canada between Nova Scotia and New Brunswick has the highest tidal range in the world, up to 16 meters.",
+          "answer": "Bay of Fundy",
+          "accept": ["Fundy", "Fundy Bay"]
+        },
+        {
+          "prompt": "This periodic climate pattern in the tropical Pacific involves warming of sea surface temperatures, alternating with La Niña.",
+          "answer": "El Niño",
+          "accept": ["El Nino", "ENSO", "El Niño-Southern Oscillation"]
+        },
+        {
+          "prompt": "This apparent deflection of moving air and water caused by Earth's rotation turns ocean currents right in the Northern Hemisphere.",
+          "answer": "Coriolis effect",
+          "accept": ["Coriolis force", "Coriolis"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-13",
+    "category": "Beach & Ocean Lore",
+    "subcategory": "Maritime & Marine Life",
+    "difficulty": "Novice",
+    "question": "These marine mammals belong to the order Sirenia, named for their resemblance to mythological sirens or mermaids. (*) Nicknamed 'sea cows', these gentle herbivores graze on shallow seagrass beds in warm coastal waters of Florida and the Caribbean. For 10 points, name these aquatic mammals closely related to dugongs.",
+    "answer": "Manatees",
+    "accept": ["manatee", "sea cow", "Trichechidae", "Trichechus"],
+    "promptOn": ["Sirenia", "sea cow"],
+    "explanation": "Manatees are large, fully aquatic, mostly herbivorous marine mammals sometimes called sea cows, known for their docility and coastal Florida habitats.",
+    "bonus": {
+      "leadIn": "For 10 points each, name these other fascinating beach and coastal animals:",
+      "parts": [
+        {
+          "prompt": "This crustacean with blue, copper-based blood has existed for over 450 million years and crawls onto Atlantic beaches to spawn.",
+          "answer": "Horseshoe Crab",
+          "accept": ["Limulidae", "horseshoe crabs", "Limulus polyphemus"]
+        },
+        {
+          "prompt": "This species of sea turtle is named for the green color of its subdermal fat and nests on tropical sandy beaches.",
+          "answer": "Green Sea Turtle",
+          "accept": ["Green Turtle", "Chelonia mydas"]
+        },
+        {
+          "prompt": "This small shorebird scurries along the surf line poking into wet sand for small crustaceans and worms.",
+          "answer": "Sanderling",
+          "accept": ["sandpiper", "sanderlings", "plover", "Calidris alba"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-14",
+    "category": "Literature",
+    "subcategory": "World Literature",
+    "difficulty": "Championship",
+    "question": "In the opening of this novel, Meursault receives a telegram stating 'Mother died today. Or maybe yesterday; I can't be sure.' (*) Later, while disoriented by the scorching glare of the sun on an Algiers beach, Meursault shoots an unnamed Arab man five times. For 10 points, name this foundational absurdist novel by Albert Camus.",
+    "answer": "The Stranger",
+    "accept": ["L'Étranger", "The Outsider", "L'Etranger"],
+    "promptOn": ["Camus"],
+    "explanation": "Albert Camus's 1942 philosophical novel 'L'Étranger' explores the philosophy of the absurd through its protagonist Meursault.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer these questions about existentialist and absurdist literature:",
+      "parts": [
+        {
+          "prompt": "In this Camus philosophical essay, the titular mythical Greek king is imagined happy as he eternally rolls a boulder up a hill.",
+          "answer": "The Myth of Sisyphus",
+          "accept": ["Le Mythe de Sisyphe", "Myth of Sisyphus"]
+        },
+        {
+          "prompt": "This French existentialist philosopher and playwright coined 'Hell is other people' in his play 'No Exit'.",
+          "answer": "Jean-Paul Sartre",
+          "accept": ["Sartre", "Jean Paul Sartre"]
+        },
+        {
+          "prompt": "In Samuel Beckett's absurdist play, Vladimir and Estragon wait endlessly near a tree for this mysterious figure.",
+          "answer": "Godot",
+          "accept": ["Waiting for Godot", "En attendant Godot"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-15",
+    "category": "History",
+    "subcategory": "Ancient & Classical",
+    "difficulty": "Regular",
+    "question": "According to Herodotus, this Persian king ordered the Hellespont to be whipped with 300 lashes and branded with hot irons after a storm destroyed his pontoon bridge. (*) This son of Darius the Great invaded Greece in 480 BCE, defeating King Leonidas at Thermopylae before his navy was crushed by Themistocles at Salamis. For 10 points, name this Achaemenid Persian ruler played in popular culture as the conqueror opposing the 300 Spartans.",
+    "answer": "Xerxes I",
+    "accept": ["Xerxes the Great", "Xerxes", "Khshayarsha"],
+    "promptOn": ["Xerxes"],
+    "explanation": "Xerxes I ruled the Achaemenid Empire from 486 to 465 BCE, known for his massive invasion of mainland Greece.",
+    "bonus": {
+      "leadIn": "For 10 points each, answer the following about ancient naval battles:",
+      "parts": [
+        {
+          "prompt": "In 480 BCE, the allied Greek navy defeated the Persian fleet in the narrow straits around this island.",
+          "answer": "Battle of Salamis",
+          "accept": ["Salamis"]
+        },
+        {
+          "prompt": "In 31 BCE, Octavian's general Agrippa defeated the combined fleets of Mark Antony and Cleopatra off the coast of Greece in this battle.",
+          "answer": "Battle of Actium",
+          "accept": ["Actium"]
+        },
+        {
+          "prompt": "These standard ancient Mediterranean warships featured three stacked banks of oars on each side and a bronze ramming prow.",
+          "answer": "Triremes",
+          "accept": ["trireme", "trieres"]
+        }
+      ]
+    }
+  },
+  {
+    "id": "tossup-16",
+    "category": "Geography",
+    "subcategory": "World Geography",
+    "difficulty": "Novice",
+    "question": "This archipelago nation is the lowest-lying country in the world, with an average ground elevation of just 1.5 meters above sea level. (*) Comprising 26 natural atolls in the Indian Ocean southwest of Sri Lanka and India, its capital is Malé. For 10 points, name this island nation threatened by rising sea levels, famous for overwater luxury beach bungalows.",
+    "answer": "Maldives",
+    "accept": ["Republic of Maldives", "Dhivehi Raajjeyge Jumhooriyyaa"],
+    "promptOn": [],
+    "explanation": "The Maldives is the smallest Asian country by land area and population, world-renowned for its turquoise lagoons and coral atolls.",
+    "bonus": {
+      "leadIn": "For 10 points each, identify these other famous tropical island groups:",
+      "parts": [
+        {
+          "prompt": "This island territory in French Polynesia is famous for its extinct volcano Mount Otemanu and turquoise barrier reef lagoon.",
+          "answer": "Bora Bora",
+          "accept": ["Bora-Bora", "Porapora"]
+        },
+        {
+          "prompt": "This Indonesian island paradise known for beaches, surfing, and Hindu temples has its capital at Denpasar.",
+          "answer": "Bali",
+          "accept": ["Bali"]
+        },
+        {
+          "prompt": "This volcanic archipelago 600 miles off Ecuador's coast was studied by Charles Darwin and contains unique marine iguanas.",
+          "answer": "Galápagos Islands",
+          "accept": ["Galapagos", "Galápagos", "Archipiélago de Colón"]
+        }
+      ]
+    }
+  }
+]

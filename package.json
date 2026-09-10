@@ -1,0 +1,27 @@
+{
+  "name": "qb-app",
+  "version": "1.0.0",
+  "description": "a quiz bowl app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test/server.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyaunicorn12/qb-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/reyaunicorn12/qb-app/issues"
+  },
+  "homepage": "https://github.com/reyaunicorn12/qb-app#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

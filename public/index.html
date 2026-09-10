@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kahuna Bowl 🏖️ Tropical Beach Quiz Bowl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏄</text></svg>">
+</head>
+<body class="theme-sunny">
+
+  <!-- Animated Beach Background -->
+  <div class="beach-bg">
+    <div class="sky-elements">
+      <div class="sun-orb" id="sunOrb">
+        <div class="sun-glow"></div>
+        <div class="sun-face">☀️</div>
+      </div>
+      <div class="clouds">
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+        <div class="cloud cloud-3">☁️</div>
+      </div>
+      <div class="flying-birds">
+        <span class="bird b1">🦅</span>
+        <span class="bird b2">🦅</span>
+      </div>
+    </div>
+    
+    <div class="tropical-decor left-palm">🌴</div>
+    <div class="tropical-decor right-palm">🌴</div>
+    <div class="floating-items">
+      <span class="float-item f1">🥥</span>
+      <span class="float-item f2">🌺</span>
+      <span class="float-item f3">🐚</span>
+      <span class="float-item f4">🐬</span>
+    </div>
+
+    <!-- Animated Waves at bottom -->
+    <div class="waves-container">
+      <svg class="wave wave1" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,50 C650,140 900,10 1200,40 L1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave2" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,40 C300,120 450,10 700,60 C950,110 1050,20 1200,70 L1200,120 L0,120 Z"></path>
+      </svg>
+      <svg class="wave wave3" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,70 C200,20 400,100 650,50 C900,0 1050,80 1200,50 L1200,120 L0,120 Z"></path>
+      </svg>
+      <div class="sand-floor"></div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="app-wrapper">
+    <!-- Tropical Navbar -->
+    <header class="tiki-nav">
+      <div class="logo-group">
+        <div class="brand-icon">🌺</div>
+        <div class="brand-text">
+          <h1 class="brand-title">Kahuna Bowl</h1>
+          <span class="brand-tagline">Tropical Beach Quiz Bowl 🌊</span>
+        </div>
+      </div>
+
+      <!-- Quick Status & Port Indicator -->
+      <div class="nav-badges">
+        <div class="port-badge" title="App running on this port">
+          <span class="pulse-dot"></span>
+          <span class="port-label">PORT:</span>
+          <strong id="portDisplay">3000</strong>
+        </div>
+
+        <!-- Beach Theme Selector -->
+        <div class="theme-picker">
+          <button class="theme-btn active" data-theme="theme-sunny" title="Sunny Lagoon">☀️</button>
+          <button class="theme-btn" data-theme="theme-sunset" title="Sunset Cove">🌅</button>
+          <button class="theme-btn" data-theme="theme-night" title="Bioluminescent Night">🌌</button>
+        </div>
+
+        <!-- Audio controls -->
+        <div class="audio-controls">
+          <button id="ambientWaveBtn" class="tiki-btn-icon" title="Toggle Ocean Waves Sound">🌊</button>
+          <button id="soundFxBtn" class="tiki-btn-icon" title="Toggle SFX">🔊</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tiki-tabs">
+      <button class="tab-btn active" data-tab="solo-tab">
+        <span class="tab-icon">🏝️</span>
+        <span class="tab-label">Solo Beach Tour</span>
+      </button>
+      <button class="tab-btn" data-tab="hotseat-tab">
+        <span class="tab-icon">🏄</span>
+        <span class="tab-label">Tiki Hotseat Clash</span>
+      </button>
+      <button class="tab-btn" data-tab="drill-tab">
+        <span class="tab-icon">⚡</span>
+        <span class="tab-label">Tidal Speed Drill</span>
+      </button>
+      <button class="tab-btn" data-tab="editor-tab">
+        <span class="tab-icon">🐚</span>
+        <span class="tab-label">Question Bank</span>
+      </button>
+      <button class="tab-btn" data-tab="stats-tab">
+        <span class="tab-icon">🏆</span>
+        <span class="tab-label">High Scores & Stats</span>
+      </button>
+      <button class="tab-btn" data-tab="guide-tab">
+        <span class="tab-icon">🥥</span>
+        <span class="tab-label">Port & Rules</span>
+      </button>
+    </nav>
+
+    <!-- MAIN VIEWPORT CONTENT -->
+    <main class="content-view">
+
+      <!-- ================= 1. SOLO TOUR TAB ================= -->
+      <section id="solo-tab" class="tab-content active">
+        
+        <!-- Top Control Bar -->
+        <div class="control-panel glass-card">
+          <div class="filter-group">
+            <label>📚 Category:</label>
+            <select id="soloCategorySelect" class="tiki-select">
+              <option value="All">🌴 All Categories (Mixed Reef)</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>⭐ Difficulty:</label>
+            <select id="soloDiffSelect" class="tiki-select">
+              <option value="All">All Tides</option>
+              <option value="Novice">Novice (Gentle Breeze)</option>
+              <option value="Regular">Regular (Steady Wave)</option>
+              <option value="Championship">Championship (Big Kahuna)</option>
+            </select>
+          </div>
+
+          <div class="filter-group speed-group">
+            <label>⚡ Reader Speed: <span id="wpmValue">260</span> WPM</label>
+            <input type="range" id="wpmSlider" min="120" max="450" step="10" value="260" class="tiki-slider">
+          </div>
+
+          <div class="action-group">
+            <button id="nextQuestionBtn" class="tiki-btn tiki-btn-primary">
+              <span>Next Tossup ⏩</span>
+            </button>
+            <button id="pauseResumeBtn" class="tiki-btn tiki-btn-secondary">
+              <span id="pauseResumeIcon">⏸️ Pause</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Game Area Grid -->
+        <div class="game-grid">
+          
+          <!-- Tossup Card -->
+          <div class="card-tossup glass-card">
+            <div class="card-header-bar">
+              <div class="header-tags">
+                <span class="tag tag-category" id="qCategoryTag">Category</span>
+                <span class="tag tag-sub" id="qSubTag">Subcategory</span>
+                <span class="tag tag-diff" id="qDiffTag">Difficulty</span>
+              </div>
+              <div class="power-status-badge" id="powerIndicator">
+                <span class="power-star">⭐</span>
+                <span class="power-text">POWER ZONE (+15)</span>
+              </div>
+            </div>
+
+            <!-- Streaming Question Box -->
+            <div class="reading-box" id="readingBox">
+              <p id="questionStream" class="stream-text">
+                Press <strong>"Next Tossup"</strong> or hit <strong>Spacebar</strong> to catch the next wave of trivia!
+              </p>
+              <div class="reading-progress-bar">
+                <div class="progress-fill" id="readingProgress"></div>
+              </div>
+            </div>
+
+            <!-- Buzz & Answer Input Area -->
+            <div class="buzzer-interaction-area">
+              <!-- Giant Surfboard Buzzer Button -->
+              <button id="soloBuzzBtn" class="surfboard-buzz-btn">
+                <span class="surf-icon">🏄</span>
+                <span class="surf-label">BUZZ IN!</span>
+                <span class="surf-hint">[SPACEBAR]</span>
+              </button>
+
+              <!-- Buzzer Timer Bar -->
+              <div id="buzzTimerContainer" class="buzz-timer-box hidden">
+                <div class="timer-meta">
+                  <span>⏳ Time to Answer:</span>
+                  <span id="timerSeconds">7.0s</span>
+                </div>
+                <div class="timer-bar">
+                  <div id="timerProgress" class="timer-fill"></div>
+                </div>
+              </div>
+
+              <!-- Answer Input Form -->
+              <form id="answerForm" class="answer-form hidden">
+                <div class="input-with-btn">
+                  <input type="text" id="answerInput" class="tiki-input" placeholder="Type your answer and hit Enter..." autocomplete="off">
+                  <button type="submit" class="tiki-btn tiki-btn-gold">Submit Answer 🏖️</button>
+                </div>
+                <div id="promptNotice" class="prompt-alert hidden"></div>
+              </form>
+            </div>
+
+            <!-- Result Feedback Box -->
+            <div id="resultFeedbackBox" class="result-box hidden">
+              <div class="result-headline" id="resultHeadline"></div>
+              <div class="answer-reveal">
+                <strong>Official Answer:</strong> <span id="revealedAnswer"></span>
+              </div>
+              <div class="trivia-explanation" id="triviaExplanation"></div>
+
+              <!-- Judge Overrule Controls -->
+              <div class="judge-override-bar">
+                <span>👨‍⚖️ Cabana Judge Override:</span>
+                <button class="judge-btn judge-accept" id="judgeAcceptBtn" title="Accept Answer (+10 / +15)">✅ Accept</button>
+                <button class="judge-btn judge-reject" id="judgeRejectBtn" title="Reject Answer (-5)">❌ Reject</button>
+                <button class="judge-btn judge-forgive" id="judgeForgiveBtn" title="Zero points / No neg">🌊 Forgive Neg</button>
+              </div>
+            </div>
+
+            <!-- 3-Part Bonus Section (Appears after correct tossup) -->
+            <div id="bonusSection" class="bonus-wrapper hidden">
+              <div class="bonus-card glass-card">
+                <div class="bonus-title">
+                  <span class="bonus-icon">🎁</span>
+                  <span>BONUS ROUND (Up to 30 Points!)</span>
+                </div>
+                <p class="bonus-leadin" id="bonusLeadIn"></p>
+
+                <div class="bonus-parts" id="bonusPartsContainer">
+                  <!-- Dynamic bonus parts rendered here -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Scoreboard & Statistics Sidebar -->
+          <aside class="sidebar-scoreboard glass-card">
+            <h3 class="scoreboard-title">
+              <span>🥥 Scoreboard</span>
+            </h3>
+
+            <div class="score-display-huge">
+              <span class="score-num" id="soloScore">0</span>
+              <span class="score-label">POINTS</span>
+            </div>
+
+            <!-- Match Breakdown -->
+            <div class="score-chips">
+              <div class="stat-chip chip-power">
+                <span class="chip-label">Powers (+15)</span>
+                <span class="chip-val" id="countPowers">0</span>
+              </div>
+              <div class="stat-chip chip-tens">
+                <span class="chip-label">Tens (+10)</span>
+                <span class="chip-val" id="countTens">0</span>
+              </div>
+              <div class="stat-chip chip-negs">
+                <span class="chip-label">Negs (-5)</span>
+                <span class="chip-val" id="countNegs">0</span>
+              </div>
+              <div class="stat-chip chip-bonus">
+                <span class="chip-label">Bonus Pts</span>
+                <span class="chip-val" id="countBonusPts">0</span>
+              </div>
+            </div>
+
+            <!-- Scoring Rates -->
+            <div class="stats-summary-box">
+              <div class="summary-line">
+                <span>Tossups Heard:</span>
+                <strong id="heardCount">0</strong>
+              </div>
+              <div class="summary-line">
+                <span>Power Rate:</span>
+                <strong id="powerRateDisplay">0%</strong>
+              </div>
+              <div class="summary-line">
+                <span>Points Per Tossup Heard:</span>
+                <strong id="ppthDisplay">0.0</strong>
+              </div>
+              <div class="summary-line">
+                <span>Bonus Conversion:</span>
+                <strong id="bonusConvDisplay">0%</strong>
+              </div>
+            </div>
+
+            <!-- Session Controls -->
+            <div class="session-btns">
+              <button id="saveScoreBtn" class="tiki-btn tiki-btn-teal full-width">
+                💾 Save Score to Leaderboard
+              </button>
+              <button id="resetSessionBtn" class="tiki-btn tiki-btn-outline full-width">
+                🔄 Reset Match
+              </button>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- ================= 2. HOTSEAT BATTLE TAB ================= -->
+      <section id="hotseat-tab" class="tab-content">
+        <div class="hotseat-container">
+          
+          <!-- Team Header Clash Bar -->
+          <div class="hotseat-header-banner glass-card">
+            <div class="team-card team-coral">
+              <div class="team-avatar">🦀</div>
+              <div class="team-info">
+                <input type="text" id="team1Name" class="team-name-input" value="Team Coral Reef">
+                <span class="team-key-badge">Buzz Key: <strong>[A] or [SPACE]</strong></span>
+              </div>
+              <div class="team-score" id="team1Score">0</div>
+            </div>
+
+            <div class="versus-orb">VS</div>
+
+            <div class="team-card team-wave">
+              <div class="team-score" id="team2Score">0</div>
+              <div class="team-info">
+                <input type="text" id="team2Name" class="team-name-input" value="Team Wave Rider">
+                <span class="team-key-badge">Buzz Key: <strong>[L] or [ENTER]</strong></span>
+              </div>
+              <div class="team-avatar">🐬</div>
+            </div>
+          </div>
+
+          <!-- Question & Buzzer Arena -->
+          <div class="hotseat-arena glass-card">
+            
+            <div class="arena-controls">
+              <button id="hotseatNextBtn" class="tiki-btn tiki-btn-gold">Next Hotseat Tossup 🌊</button>
+              <span id="hotseatLockoutStatus" class="lockout-badge">READY TO BUZZ</span>
+            </div>
+
+            <div class="reading-box" id="hotseatReadingBox">
+              <p id="hotseatStream" class="stream-text">
+                Press <strong>"Next Hotseat Tossup"</strong> to begin the head-to-head beach duel!
+              </p>
+            </div>
+
+            <!-- Dual Large Buzzer Buttons for Touch / Mouse -->
+            <div class="dual-buzzer-row">
+              <button id="buzzTeam1Btn" class="team-buzz-btn buzz-coral">
+                <span class="buzzer-icon">🦀</span>
+                <span class="buzzer-title">BUZZ (Team Coral)</span>
+                <span class="buzzer-key">[A / Space]</span>
+              </button>
+
+              <button id="buzzTeam2Btn" class="team-buzz-btn buzz-wave">
+                <span class="buzzer-icon">🐬</span>
+                <span class="buzzer-title">BUZZ (Team Wave)</span>
+                <span class="buzzer-key">[L / Enter]</span>
+              </button>
+            </div>
+
+            <!-- Hotseat Answer Box -->
+            <div id="hotseatAnswerSection" class="hotseat-answer-box hidden">
+              <div class="active-buzzer-announcement" id="buzzerWho">
+                Team Coral buzzed in!
+              </div>
+              <form id="hotseatForm" class="answer-form">
+                <div class="input-with-btn">
+                  <input type="text" id="hotseatAnswerInput" class="tiki-input" placeholder="Type answer..." autocomplete="off">
+                  <button type="submit" class="tiki-btn tiki-btn-primary">Submit 🎯</button>
+                </div>
+              </form>
+            </div>
+
+            <div id="hotseatFeedback" class="result-box hidden">
+              <div id="hotseatHeadline" class="result-headline"></div>
+              <div class="answer-reveal">
+                <strong>Answer:</strong> <span id="hotseatRevealedAns"></span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= 3. SPEED DRILL TAB ================= -->
+      <section id="drill-tab" class="tab-content">
+        <div class="drill-container glass-card">
+          <div class="drill-header">
+            <div class="drill-title-group">
+              <h2>⚡ Tidal Speed Drill</h2>
+              <p>Recognize power buzzes at lightning speed! 60 seconds on the clock.</p>
+            </div>
+            
+            <div class="drill-stats-row">
+              <div class="drill-stat-card">
+                <span class="ds-label">⏳ Timer</span>
+                <span class="ds-val" id="drillTimerDisplay">60s</span>
+              </div>
+              <div class="drill-stat-card">
+                <span class="ds-label">🔥 Combo Streak</span>
+                <span class="ds-val" id="drillStreakDisplay">0x</span>
+              </div>
+              <div class="drill-stat-card">
+                <span class="ds-label">🏆 Drill Score</span>
+                <span class="ds-val" id="drillScoreDisplay">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="drill-start-panel" id="drillStartPanel">
+            <button id="startDrillBtn" class="tiki-btn tiki-btn-gold tiki-btn-large">
+              🏄 Start 60-Second Tidal Wave!
+            </button>
+          </div>
+
+          <div id="drillActivePanel" class="drill-active-panel hidden">
+            <div class="drill-clue-box">
+              <div class="clue-tag" id="drillCategoryTag">Science</div>
+              <p id="drillClueText" class="drill-text">Question clue appears here...</p>
+            </div>
+
+            <form id="drillForm" class="drill-input-form">
+              <input type="text" id="drillInput" class="tiki-input" placeholder="Quick! Answer here..." autocomplete="off">
+              <button type="submit" class="tiki-btn tiki-btn-primary">Buzz!</button>
+              <button type="button" id="drillPassBtn" class="tiki-btn tiki-btn-secondary">Pass (0 pts)</button>
+            </form>
+
+            <div id="drillFeedback" class="drill-feedback-line"></div>
+          </div>
+
+          <div id="drillGameOverPanel" class="drill-gameover hidden">
+            <h3>🎉 DRILL COMPLETE!</h3>
+            <p>Final Score: <strong id="drillFinalScore">0</strong> pts</p>
+            <p>Max Streak: <strong id="drillMaxStreak">0</strong> in a row</p>
+            <button id="drillRetryBtn" class="tiki-btn tiki-btn-gold">Try Again 🌊</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. QUESTION BANK & CABANA BUILDER TAB ================= -->
+      <section id="editor-tab" class="tab-content">
+        <div class="editor-layout">
+          
+          <!-- Left: Add New Question Card -->
+          <div class="glass-card editor-form-card">
+            <h3>📝 Cabana Question Builder</h3>
+            <p class="section-desc">Create custom tossups and bonuses for your tournaments!</p>
+
+            <form id="addQuestionForm">
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label>Category *</label>
+                  <input type="text" id="newCategory" class="tiki-input" placeholder="e.g. Science, Beach Lore, Literature" required list="categorySuggestions">
+                  <datalist id="categorySuggestions">
+                    <option value="Science">
+                    <option value="Literature">
+                    <option value="History">
+                    <option value="Fine Arts">
+                    <option value="Geography">
+                    <option value="Mythology">
+                    <option value="Beach & Ocean Lore">
+                  </datalist>
+                </div>
+                <div class="form-group flex-1">
+                  <label>Difficulty</label>
+                  <select id="newDifficulty" class="tiki-select">
+                    <option value="Novice">Novice</option>
+                    <option value="Regular" selected>Regular</option>
+                    <option value="Championship">Championship</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Subcategory</label>
+                <input type="text" id="newSubcategory" class="tiki-input" placeholder="e.g. Biology, US History, Poetry">
+              </div>
+
+              <div class="form-group">
+                <label>Tossup Text * (Use <code>(*)</code> to mark the 15-pt Power cutoff)</label>
+                <textarea id="newQuestionText" class="tiki-textarea" rows="4" placeholder="These organelles contain 70S ribosomes... (*) For 10 points, name these powerhouses of the cell." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Primary Answer *</label>
+                <input type="text" id="newAnswer" class="tiki-input" placeholder="e.g. Mitochondria" required>
+              </div>
+
+              <div class="form-group">
+                <label>Accepted Aliases / Variations (comma-separated)</label>
+                <input type="text" id="newAccept" class="tiki-input" placeholder="e.g. mitochondrion, chondriosome">
+              </div>
+
+              <div class="form-group">
+                <label>Prompt On (comma-separated)</label>
+                <input type="text" id="newPromptOn" class="tiki-input" placeholder="e.g. organelle, cellular respiration">
+              </div>
+
+              <div class="form-group">
+                <label>Explanation / Extra Trivia</label>
+                <input type="text" id="newExplanation" class="tiki-input" placeholder="e.g. Discovered by Albert von Kölliker in 1857">
+              </div>
+
+              <button type="submit" class="tiki-btn tiki-btn-gold full-width">
+                ✨ Add Question to Bank
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Questions Directory & Import/Export -->
+          <div class="glass-card editor-list-card">
+            <div class="list-header-row">
+              <h3>📚 Question Library (<span id="totalQuestionsCount">0</span>)</h3>
+              
+              <div class="import-export-btns">
+                <a href="/api/export" class="tiki-btn-sm tiki-btn-outline" download>📥 Export JSON</a>
+                <label class="tiki-btn-sm tiki-btn-secondary" style="cursor: pointer;">
+                  📤 Import JSON
+                  <input type="file" id="importJsonFile" accept=".json" style="display: none;">
+                </label>
+              </div>
+            </div>
+
+            <!-- Search & Filter Library -->
+            <div class="library-search-bar">
+              <input type="text" id="librarySearchInput" class="tiki-input" placeholder="🔍 Search question text, answer, category...">
+            </div>
+
+            <!-- Scrollable list -->
+            <div class="questions-scroll-list" id="questionsList">
+              <!-- Rendered items -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= 5. HIGH SCORES & STATS TAB ================= -->
+      <section id="stats-tab" class="tab-content">
+        <div class="stats-page-grid">
+          
+          <div class="glass-card">
+            <h3>🏆 Beachcomber Leaderboard</h3>
+            <p class="section-desc">Top scores registered in the sand!</p>
+            <div class="leaderboard-table-wrap">
+              <table class="tiki-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                    <th>Powers</th>
+                    <th>Tens</th>
+                    <th>Negs</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                  <tr><td colspan="7">Loading scores...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3>📊 Category Mastery & Trivia Insights</h3>
+            <p class="section-desc">Categories available in the reef:</p>
+            <div class="category-breakdown-grid" id="categoryStatsGrid">
+              <!-- Category badges rendered here -->
+            </div>
+
+            <div class="fun-beach-fact-box">
+              <h4>🌺 Beach Quiz Bowl Pro Tip:</h4>
+              <p>Buzz early when you recognize the deep clue before the <strong>(*)</strong> mark for +15 Power points! If you are uncertain before the power mark, buzzing wrong incurs a -5 Neg penalty. After the question finishes reading, there is no neg penalty!</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= 6. PORT & RULES GUIDE TAB ================= -->
+      <section id="guide-tab" class="tab-content">
+        <div class="glass-card guide-container">
+          <h2>🏖️ Kahuna Bowl Port & Architecture Guide</h2>
+          
+          <div class="guide-grid">
+            <div class="guide-card">
+              <div class="guide-icon">🔌</div>
+              <h3>Configurable Server Port</h3>
+              <p>The application runs on a configurable port with multiple options:</p>
+              <ul>
+                <li>Default Port: <code>3000</code></li>
+                <li>Environment Variable: <code>PORT=8080 node server.js</code></li>
+                <li>Command-line Flag: <code>node server.js --port 8080</code></li>
+                <li>Current Active Port: <strong class="highlight-pill" id="activePortGuide">3000</strong></li>
+              </ul>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">🏄</div>
+              <h3>Quiz Bowl Rules (NAQT / ACF Style)</h3>
+              <ul>
+                <li><strong>Power (+15 pts):</strong> Buzz before the power cutoff mark <code>(*)</code> is read.</li>
+                <li><strong>Ten (+10 pts):</strong> Correct answer after power mark.</li>
+                <li><strong>Neg (-5 pts):</strong> Incorrect buzz before question completes.</li>
+                <li><strong>Dead Tossup (0 pts):</strong> Incorrect buzz after full tossup has been read.</li>
+                <li><strong>Bonus (Up to 30 pts):</strong> 3 questions worth 10 points each.</li>
+              </ul>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">🌴</div>
+              <h3>Audio Synthesizer Engine</h3>
+              <p>Built with native Web Audio API (no external downloads needed):</p>
+              <ul>
+                <li>🌊 <strong>Ocean Ambient Waves:</strong> Pink noise filtered coastal tide simulation.</li>
+                <li>🔔 <strong>Tropical Marimba Chimes:</strong> Bright pentatonic scales on power.</li>
+                <li>🥥 <strong>Coconut Bonk:</strong> Hollow woodblock resonance on negs.</li>
+              </ul>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">⌨️</div>
+              <h3>Keyboard Shortcuts</h3>
+              <ul>
+                <li><kbd>Spacebar</kbd> : Buzz In (Solo mode) or Next Question</li>
+                <li><kbd>Enter</kbd> : Submit typed answer</li>
+                <li><kbd>Esc</kbd> / <kbd>P</kbd> : Pause or Resume reader</li>
+                <li><kbd>A</kbd> / <kbd>L</kbd> : Team 1 / Team 2 Buzz (Hotseat)</li>
+                <li><kbd>1</kbd> / <kbd>2</kbd> : Accept / Reject judge override</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Save Score Modal Dialog -->
+    <div id="saveScoreModal" class="modal-overlay hidden">
+      <div class="modal-card glass-card">
+        <h3>💾 Save Your Beach Trophy!</h3>
+        <p>You scored <strong id="modalFinalScore">0</strong> points with <strong id="modalFinalPowers">0</strong> powers.</p>
+        <div class="form-group">
+          <label>Enter Your Beachcomber Name:</label>
+          <input type="text" id="modalPlayerName" class="tiki-input" placeholder="e.g. Captain Coral" maxlength="25">
+        </div>
+        <div class="modal-actions">
+          <button id="modalConfirmBtn" class="tiki-btn tiki-btn-gold">Confirm Save 🏆</button>
+          <button id="modalCancelBtn" class="tiki-btn tiki-btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="tiki-toast hidden"></div>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
